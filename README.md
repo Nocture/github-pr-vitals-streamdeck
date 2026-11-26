@@ -44,7 +44,7 @@ You need Stream Deck 7.1 or later, on Windows 10 or later, or on macOS 13 or lat
 Windows so far. Profiles are included for the XL, the MK.2 and other 15-key decks, the Mini, the Neo and the Plus.
 
 1. Download `com.nocture.prvitals.streamDeckPlugin` from the
-   [latest release](https://github.com/Nocture/github-pr-vitals/releases/latest).
+   [latest release](https://github.com/Nocture/github-pr-vitals-streamdeck/releases/latest).
 2. Double-click the file and accept.
 
 To update, do the same with a newer file.
