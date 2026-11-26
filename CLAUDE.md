@@ -21,6 +21,8 @@ without a make target, source `scripts/use-node.sh` first.
 
 - `make test`: all tests (Vitest).
 - `make check`: type check, tests, build and `streamdeck validate`. Run it before a commit.
+- `main` takes changes only through a pull request. `.github/workflows/check.yml` runs `npm run check` on each
+  pull request and on each push to `main`.
 - One test file: `bash -c "source scripts/use-node.sh && npx vitest run src/prs/slots.test.ts"`.
   Add `-t "<test name>"` for one test.
 - `make deploy`: WSL only. Runs the checks, copies the plugin folder into Stream Deck on Windows and restarts the

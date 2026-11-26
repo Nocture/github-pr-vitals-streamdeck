@@ -5,6 +5,8 @@ How to build, test and package the plugin. Back to the [README](../README.md).
 - Use Node 24. The version is in `.nvmrc`, and the make targets select it for you.
 - `make check` runs the type check, the tests, the build and the Stream Deck validation.
 - `make test` runs the tests only.
+- Changes reach `main` through a pull request. GitHub runs `npm run check` on each pull request and on each push to
+  `main`.
 - `make deploy` runs the checks in WSL, copies the plugin into Stream Deck on Windows and restarts Stream Deck.
 - `make package` runs the checks and writes `dist/com.nocture.prvitals.streamDeckPlugin`. Give this file to other
   people. A double-click on it installs the plugin.
