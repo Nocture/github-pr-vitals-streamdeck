@@ -40,8 +40,8 @@ Each key comes in three styles. Pick one in the settings.
 
 ## Install
 
-You need Stream Deck 7.1 or later, on Windows 10 or later, or on macOS 13 or later. Profiles are included for the
-XL, the MK.2 and other 15-key decks, the Mini, the Neo and the Plus.
+You need Stream Deck 7.1 or later, on Windows 10 or later, or on macOS 13 or later. It has only been tested on
+Windows so far. Profiles are included for the XL, the MK.2 and other 15-key decks, the Mini, the Neo and the Plus.
 
 1. Download `com.nocture.prvitals.streamDeckPlugin` from the
    [latest release](https://github.com/Nocture/github-pr-vitals/releases/latest).
@@ -84,3 +84,5 @@ Every key opens the same settings page, and the settings apply to all keys.
 MIT. See [LICENSE](LICENSE). Third-party material has its own licenses: see
 [THIRD-PARTY-NOTICES.txt](com.nocture.prvitals.sdPlugin/THIRD-PARTY-NOTICES.txt). The packaged plugin also has
 `bin/THIRD-PARTY-NOTICES.txt`, for the packages inside `bin/plugin.js`.
+
+GitHub PR Vitals is an independent project. It is not affiliated with or endorsed by GitHub, Elgato or Atlassian.
