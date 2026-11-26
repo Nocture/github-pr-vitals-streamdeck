@@ -1,0 +1,187 @@
+{
+	"Name": "GitHub PR Vitals",
+	"Version": "1.0.0.0",
+	"Author": "Nocture",
+	"UUID": "com.nocture.prvitals",
+	"Description": "Your open GitHub pull requests on Stream Deck keys: pipeline, review and Jira ticket at a glance.",
+	"Category": "GitHub PR Vitals",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"Icon": "imgs/plugin/marketplace",
+	"CodePath": "bin/plugin.js",
+	"SDKVersion": 3,
+	"Software": {
+		"MinimumVersion": "7.1"
+	},
+	"OS": [
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		},
+		{
+			"Platform": "mac",
+			"MinimumVersion": "13"
+		}
+	],
+	"Nodejs": {
+		"Version": "24"
+	},
+	"Actions": [
+		{
+			"Name": "PR slot",
+			"UUID": "com.nocture.prvitals.pr-slot",
+			"Icon": "imgs/actions/pr-slot/icon",
+			"Tooltip": "Fills itself with one of your open pull requests. A press opens it. A second press within 3 seconds opens its Jira ticket",
+			"PropertyInspectorPath": "ui/settings.html",
+			"DisableAutomaticStates": true,
+			"SupportedInMultiActions": false,
+			"UserTitleEnabled": false,
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/pr-slot/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"Name": "Deploy slot",
+			"UUID": "com.nocture.prvitals.deploy-slot",
+			"Icon": "imgs/actions/deploy-slot/icon",
+			"Tooltip": "Fills itself with one of your approved PRs. A press opens it. A second press within 3 seconds opens its Jira ticket",
+			"PropertyInspectorPath": "ui/settings.html",
+			"DisableAutomaticStates": true,
+			"SupportedInMultiActions": false,
+			"UserTitleEnabled": false,
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/deploy-slot/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"Name": "My PRs",
+			"UUID": "com.nocture.prvitals.summary-mine",
+			"Icon": "imgs/actions/summary-mine/icon",
+			"Tooltip": "Counts your open PRs. A press shows them all.",
+			"PropertyInspectorPath": "ui/settings.html",
+			"DisableAutomaticStates": true,
+			"SupportedInMultiActions": false,
+			"UserTitleEnabled": false,
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/summary-mine/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"Name": "Deploy",
+			"UUID": "com.nocture.prvitals.summary-deploy",
+			"Icon": "imgs/actions/summary-deploy/icon",
+			"Tooltip": "Counts your approved PRs. A press shows the ones to deploy.",
+			"PropertyInspectorPath": "ui/settings.html",
+			"DisableAutomaticStates": true,
+			"SupportedInMultiActions": false,
+			"UserTitleEnabled": false,
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/summary-deploy/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"Name": "Back",
+			"UUID": "com.nocture.prvitals.back",
+			"Icon": "imgs/actions/back/icon",
+			"Tooltip": "Returns to the profile you came from",
+			"PropertyInspectorPath": "ui/settings.html",
+			"DisableAutomaticStates": true,
+			"SupportedInMultiActions": false,
+			"UserTitleEnabled": false,
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/back/key",
+					"ShowTitle": false
+				}
+			]
+		}
+	],
+	"Profiles": [
+		{
+			"Name": "profiles/PR Vitals XL",
+			"DeviceType": 2,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": false
+		},
+		{
+			"Name": "profiles/PR Deploy XL",
+			"DeviceType": 2,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": false
+		},
+		{
+			"Name": "profiles/PR Vitals MK2",
+			"DeviceType": 0,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": false
+		},
+		{
+			"Name": "profiles/PR Vitals Mini",
+			"DeviceType": 1,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": false
+		},
+		{
+			"Name": "profiles/PR Vitals Plus",
+			"DeviceType": 7,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": false
+		},
+		{
+			"Name": "profiles/PR Vitals Neo",
+			"DeviceType": 9,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": false
+		},
+		{
+			"Name": "profiles/PR Deploy MK2",
+			"DeviceType": 0,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": false
+		},
+		{
+			"Name": "profiles/PR Deploy Mini",
+			"DeviceType": 1,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": false
+		},
+		{
+			"Name": "profiles/PR Deploy Plus",
+			"DeviceType": 7,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": false
+		},
+		{
+			"Name": "profiles/PR Deploy Neo",
+			"DeviceType": 9,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": false
+		}
+	]
+}

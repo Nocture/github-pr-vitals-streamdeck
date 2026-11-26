@@ -1,0 +1,35 @@
+{
+    "name": "github-pr-vitals",
+    "private": true,
+    "scripts": {
+        "build": "rollup -c",
+        "watch": "rollup -c -w --watch.onEnd=\"streamdeck restart com.nocture.prvitals\"",
+        "test": "vitest run --passWithNoTests",
+        "check": "tsc --noEmit && vitest run --passWithNoTests && rollup -c && streamdeck validate com.nocture.prvitals.sdPlugin",
+        "deploy": "scripts/deploy.sh",
+        "readme-images": "vite-node scripts/make-readme-images.ts",
+        "profiles": "vite-node scripts/make-profiles.ts"
+    },
+    "license": "MIT",
+    "type": "module",
+    "engines": {
+        "node": "24.x"
+    },
+    "devDependencies": {
+        "@elgato/cli": "^1.10.5",
+        "@rollup/plugin-commonjs": "^29.0.2",
+        "@rollup/plugin-node-resolve": "^15.2.2",
+        "@rollup/plugin-terser": "^1.0.0",
+        "@rollup/plugin-typescript": "^12.1.0",
+        "@tsconfig/node24": "^24.0.6",
+        "@types/node": "~24.1.0",
+        "rollup": "^4.0.2",
+        "tslib": "^2.6.2",
+        "typescript": "^5.2.2",
+        "vite-node": "3.2.4",
+        "vitest": "^4.1.12"
+    },
+    "dependencies": {
+        "@elgato/streamdeck": "^3.0.6"
+    }
+}

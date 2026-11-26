@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <script src="sdpi-components.js"></script>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, Roboto, Helvetica, sans-serif;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 12px;
+      padding: 6px 16px;
+      border-bottom: 1px solid #474747;
+      color: #d8d8d8;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    section + section {
+      margin-top: 8px;
+    }
+    .tag {
+      padding: 1px 5px;
+      border: 1px solid #5a5a5a;
+      border-radius: 3px;
+      color: #969696;
+      font-size: 9.5px;
+      letter-spacing: 0.06em;
+    }
+    .hint {
+      color: #969696;
+      font-size: 12px;
+      padding: 0 16px 8px;
+    }
+    .hint a {
+      color: #4c9aff;
+    }
+    .owner,
+    .repo-color {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 2px 0;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <h2 class="section-title">GitHub</h2>
+    <sdpi-item label="GitHub token">
+      <sdpi-password setting="githubToken" global></sdpi-password>
+    </sdpi-item>
+    <sdpi-item label="">
+      <sdpi-button id="test-token">Test</sdpi-button>
+      <span id="token-status"></span>
+    </sdpi-item>
+    <div class="hint">
+      Make a classic token at
+      <a id="token-page" href="https://github.com/settings/tokens/new">https://github.com/settings/tokens/new</a>.
+      Select the scopes <b>repo</b> and <b>read:org</b>. The link selects them for you. The plugin never writes to
+      GitHub.
+    </div>
+  </section>
+  <section>
+    <h2 class="section-title">Jira <span class="tag">Optional</span></h2>
+    <sdpi-item label="Jira site">
+      <sdpi-textfield setting="jiraSite" global placeholder="https://your-site.atlassian.net"></sdpi-textfield>
+    </sdpi-item>
+    <sdpi-item label="Jira projects">
+      <sdpi-textfield setting="jiraProjects" global placeholder="ABC, XYZ"></sdpi-textfield>
+    </sdpi-item>
+    <div class="hint">
+      Shows the ticket key on each PR key, and a second press opens the ticket. Only these keys count as tickets,
+      so “UTF-8” in a title is not one.
+    </div>
+    <sdpi-item label="Jira email">
+      <sdpi-textfield setting="jiraEmail" global></sdpi-textfield>
+    </sdpi-item>
+    <sdpi-item label="Jira token">
+      <sdpi-password setting="jiraToken" global></sdpi-password>
+    </sdpi-item>
+    <sdpi-item label="">
+      <sdpi-button id="test-jira">Test</sdpi-button>
+      <span id="jira-status"></span>
+    </sdpi-item>
+    <div class="hint">
+      Polls Jira for the status of each ticket, and shows a tick on the key when the ticket is resolved. Needs an
+      API token with scopes for Jira, scope read:jira-work.
+      <a id="jira-info" href="https://github.com/Nocture/github-pr-vitals/blob/main/docs/tokens.md#the-jira-token">More info</a>
+    </div>
+  </section>
+  <section>
+    <h2 class="section-title">Display</h2>
+    <sdpi-item label="Repo colours">
+      <div id="repo-colors"></div>
+    </sdpi-item>
+    <div class="hint">
+      A new repo gets a free colour. Pick a colour to change it.
+    </div>
+    <sdpi-item label="Show PRs in">
+      <div id="owners"></div>
+    </sdpi-item>
+    <div class="hint">
+      The organisations your token can see, and your own account.
+    </div>
+    <sdpi-item label="My PRs style">
+      <sdpi-select setting="mineStyle" global default="scoreboard">
+        <option value="signal">Signal</option>
+        <option value="scoreboard">Scoreboard</option>
+        <option value="ledger">Ledger</option>
+      </sdpi-select>
+    </sdpi-item>
+    <sdpi-item label="Deploy style">
+      <sdpi-select setting="deployStyle" global default="signal">
+        <option value="signal">Signal</option>
+        <option value="scoreboard">Scoreboard</option>
+        <option value="ledger">Ledger</option>
+      </sdpi-select>
+    </sdpi-item>
+    <div class="hint">
+      The style of the summary keys, My PRs and Deploy.
+    </div>
+  </section>
+  <section>
+    <h2 class="section-title">Status</h2>
+    <sdpi-item label="Updated">
+      <div>
+        <div id="github-updated"></div>
+        <div id="jira-updated"></div>
+      </div>
+    </sdpi-item>
+    <sdpi-item label="Build">
+      <span id="build"></span>
+    </sdpi-item>
+    <div class="hint">
+      These settings are global. Every key of the plugin opens this same page.
+    </div>
+  </section>
+  <script src="settings.js"></script>
+</body>
+</html>
