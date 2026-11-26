@@ -35,7 +35,7 @@ const DOS_DATE_1980_01_01 = 0x0021;
 const DOS_TIME_MIDNIGHT = 0;
 const DOS_DIRECTORY_ATTRIBUTE = 0x10;
 
-/** The same seed always gives the same id. The version and variant bits follow RFC 4122 version 5. */
+/** The same seed always gives the same id. The version and variant bits follow RFC 9562 version 5. */
 export function stableUuid(seed: string): string {
   const bytes = createHash("sha1").update(UUID_NAMESPACE + seed).digest().subarray(0, 16);
   bytes[6] = (bytes[6] & 0x0f) | 0x50;
