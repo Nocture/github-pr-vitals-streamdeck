@@ -15,6 +15,13 @@ updates:
       # The plugin runs on Node 24, so the types stay on 24.
       - dependency-name: "@types/node"
         update-types: ["version-update:semver-major"]
+      # vite-node 6 needs Vite 8. Vite 8 leaves the decorators of the actions in the test code,
+      # and Node 24 cannot parse them.
+      - dependency-name: vite-node
+        versions: [">=6"]
+      # TypeScript 7 has no compiler API for @rollup/plugin-typescript, so the build fails.
+      - dependency-name: typescript
+        versions: [">=7"]
     commit-message:
       prefix: chore(deps)
 
