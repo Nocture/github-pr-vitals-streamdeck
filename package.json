@@ -27,7 +27,7 @@
         "tslib": "^2.6.2",
         "typescript": "^5.2.2",
         "vite-node": "3.2.4",
-        "vitest": "^4.1.12"
+        "vitest": "^5.1.1"
     },
     "dependencies": {
         "@elgato/streamdeck": "^3.0.6"
