@@ -22,7 +22,8 @@ without a make target, source `scripts/use-node.sh` first.
 - `make test`: all tests (Vitest).
 - `make check`: type check, tests, build and `streamdeck validate`. Run it before a commit.
 - `main` takes changes only through a pull request. `.github/workflows/check.yml` runs `npm run check` on each
-  pull request and on each push to `main`.
+  pull request and on each push to `main`. Then it runs `npm run profiles` and `npm run readme-images`, and fails
+  when a file changes. So commit the files that they write.
 - A tag `v*` runs `.github/workflows/release.yml`. It runs the checks, packs the plugin, attests the file and
   makes a draft release. The tag must match the `Version` of the manifest. `docs/development.md` has the steps.
 - One test file: `bash -c "source scripts/use-node.sh && npx vitest run src/prs/slots.test.ts"`.

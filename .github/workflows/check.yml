@@ -20,3 +20,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - name: Stop when a generated file is out of date
+        run: |
+          npm run profiles
+          npm run readme-images
+          if [ -n "$(git status --porcelain)" ]; then
+            git status --short
+            echo "::error::Run npm run profiles and npm run readme-images, then commit the changed files."
+            exit 1
+          fi
