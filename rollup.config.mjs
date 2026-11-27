@@ -74,8 +74,9 @@ const config = {
 		}),
 		{
 			name: "build-label",
+			// A tag name can hold a quote. So the label replaces the whole string literal, written as JSON.
 			transform(code) {
-				return code.includes(BUILD_PLACEHOLDER) ? code.replaceAll(BUILD_PLACEHOLDER, buildLabel) : null;
+				return code.includes(BUILD_PLACEHOLDER) ? code.replaceAll(JSON.stringify(BUILD_PLACEHOLDER), JSON.stringify(buildLabel)) : null;
 			}
 		},
 		nodeResolve({
